@@ -1,8 +1,23 @@
 {
-  "formatter": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true
-  }
+    "formatter": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true
+    },
+    "react-native": {
+        "entry-file": "index.js",
+        "platforms": [
+            "ios",
+            "android"
+        ],
+        "assets": [
+            "./assets/fonts/",
+            "./assets/images/"
+        ],
+        "dependencies": {
+            "react": "18.2.0",
+            "react-native": "0.74.1"
+        }
+    }
 }
