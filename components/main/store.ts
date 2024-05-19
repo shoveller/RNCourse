@@ -10,3 +10,5 @@ const names = Array.from({length: 30}).map(() => {
 })
 export const textAtom = atomWithReset('');
 export const goalListAtom = atom<{ key: string, value: string }[]>(names)
+
+export const modalAtom = atomWithReset(true);
