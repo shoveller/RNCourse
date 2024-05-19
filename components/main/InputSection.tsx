@@ -1,13 +1,14 @@
 import tw from "twrnc";
 import {Button, TextInput, View} from "react-native";
-import {useAtomValue} from "jotai/index";
-import {textAtom} from "@/app/(tabs)/store";
-import {useOnChangeText, useOnPress} from "@/app/(tabs)/hooks";
+import {useAtomValue} from "jotai";
+import {useOnChangeText, useOnPress} from "@/components/main/hooks";
+import {textAtom} from "@/components/main/store";
 
 const InputSection = () => {
     const value = useAtomValue(textAtom);
     const onChangeText = useOnChangeText();
     const onPress = useOnPress();
+    console.log('InputSection');
 
     return (
         <View

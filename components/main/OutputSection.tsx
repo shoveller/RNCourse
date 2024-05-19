@@ -1,8 +1,8 @@
 import tw from "twrnc";
 import {FlatList, Pressable, Text, View} from "react-native";
 import {useAtomValue} from "jotai";
-import {goalListAtom} from "@/app/(tabs)/store";
-import {useOnDelete} from "@/app/(tabs)/hooks";
+import {useOnDelete} from "@/components/main/hooks";
+import {goalListAtom} from "@/components/main/store";
 
 const OutputSection = () => {
     const goals = useAtomValue(goalListAtom);

@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import {atom} from "jotai/index";
+import {atom} from "jotai";
 
 const names = Array.from({length: 30}).map(() => {
     return {
