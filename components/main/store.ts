@@ -1,5 +1,6 @@
 import {faker} from "@faker-js/faker";
 import {atom} from "jotai";
+import {atomWithReset} from "jotai/utils";
 
 const names = Array.from({length: 30}).map(() => {
     return {
@@ -7,5 +8,5 @@ const names = Array.from({length: 30}).map(() => {
         value: faker.person.fullName()
     }
 })
-export const textAtom = atom('');
+export const textAtom = atomWithReset('');
 export const goalListAtom = atom<{ key: string, value: string }[]>(names)

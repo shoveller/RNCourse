@@ -1,12 +1,15 @@
 import tw from "twrnc";
 import {FlatList, Pressable, Text, View} from "react-native";
-import {useAtomValue} from "jotai";
-import {useOnDelete} from "@/components/main/hooks";
+import {useAtom} from "jotai";
 import {goalListAtom} from "@/components/main/store";
 
 const OutputSection = () => {
-    const goals = useAtomValue(goalListAtom);
-    const onDelete = useOnDelete();
+    const [goals, setGoals] = useAtom(goalListAtom);
+    const onDelete = (key: string)  => {
+        setGoals(goals.filter(item => {
+            return item.key !== key;
+        }))
+    }
 
     return (
         <View style={tw`flex-4 justify-center items-center`}>
