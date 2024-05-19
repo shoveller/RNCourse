@@ -1,7 +1,9 @@
 import tw from "twrnc";
-import {Button, Modal, TextInput, View} from "react-native";
+import {Button, Modal, TextInput, View, Image} from "react-native";
 import {useAtom, useSetAtom} from "jotai";
 import {goalListAtom, modalAtom, textAtom} from "@/components/main/store";
+// @ts-ignore
+import logo from '../../assets/images/react-logo.png'
 
 const InputSection = () => {
     const [value, setValue] = useAtom(textAtom);
@@ -21,9 +23,10 @@ const InputSection = () => {
     return (
         <Modal visible={visible} animationType="slide" style={tw`w-[100%]`}>
             <View
-                style={tw`flex-1 justify-center gap-[8px] border-b border-gray-500 m-4`}>
+                style={tw`flex-1 justify-center items-center gap-[8px] border-b border-gray-500 m-4`}>
+                <Image style={tw`w-[3rem] h-[3rem]`} source={logo} />
                 <TextInput
-                    style={tw`border border-gray-300 p-[8px]`}
+                    style={tw`w-[100%] border border-gray-300 p-[8px]`}
                     placeholder="당신의 목표!" onChangeText={setValue}/>
                 <View style={tw`flex-row justify-center items-center gap-[0.5rem]`}>
                     <View style={tw`w-[40%]`}><Button title="목표 추가하기" onPress={onPress}/></View>
